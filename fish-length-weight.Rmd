@@ -1,0 +1,61 @@
+---
+title: "fish-length-weight.Rmd"
+author: "Desik Somasundaram"
+date: "8/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+# Section 3
+
+## R Projects and functions
+
+### Desik Somasundaram
+
+**Fish Length Width Example**
+
+^2^~2~
+
+
+* Bullets
+  + Item
+  
+![an image caption Source: Tric Robotics.](images/Tric.jpg)
+
+```{r}
+st_weight_g <- function(a,b,L_cm) {
+ a * (L_cm ^ b)
+}
+
+st_weight_g(a= 0.0905, b = 2.52, L_cm = 60)
+
+st_weight_g(a= 0.0353, b = 3.05, L_cm = 60)
+
+st_weight_g(a= 0.0181, b = 3.27, L_cm = 60)
+
+fish_length_cm <- seq(from = 0, to = 200, by = 1)
+
+barracuda_weight<- st_weight_g(a= 0.0905, b = 2.52, L_cm = fish_length_cm)
+
+barracuda_df <- data.frame(fish_length_cm, barracuda_weight)
+
+```
+
+### Create ggplot graph:
+
+```{r}
+
+ggplot(data = barracuda_df, aes(x = fish_length_cm, y = barracuda_weight)) + 
+  geom_point() +
+  labs(x= "Length (cm)",
+       y = "Weight (g)",
+       title = "Barracuda Weight as a Function of Length",
+       subtitle = "Desik Somasundaram")
+
+
+
