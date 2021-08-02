@@ -205,8 +205,8 @@ barracuda_weight&lt;- st_weight_g(a= 0.0905, b = 2.52, L_cm = fish_length_cm)
 
 barracuda_df &lt;- data.frame(fish_length_cm, barracuda_weight)</code></pre>
 </div>
-<div id="create-ggplot-graph" class="section level3">
-<h3>Create ggplot graph:</h3>
+<div id="create-use-ggplot-graph" class="section level3">
+<h3>Create use ggplot graph:</h3>
 <pre class="r"><code>ggplot(data = barracuda_df, aes(x = fish_length_cm, y = barracuda_weight)) + 
   geom_point() +
   labs(x= &quot;Length (cm)&quot;,

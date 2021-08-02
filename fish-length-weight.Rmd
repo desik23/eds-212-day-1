@@ -46,7 +46,7 @@ barracuda_df <- data.frame(fish_length_cm, barracuda_weight)
 
 ```
 
-### Create ggplot graph:
+### Create use ggplot graph:
 
 ```{r}
 
